@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Total Offense</title>
+  <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+  <h1>FBS Team Total Offense Statistics for 2016</h1>
+  <div class="input-section">
+    <h2>Search for your school below</h2>
+    <input type="text" id="userInput"></input>
+    <button onclick="getSchool()">Search</button>
+  </div>
+  <table>
+    <thead>
+      <tr class="cata">
+          <th class="no-border"></th>
+          <th class="no-border"></th>
+          <th class="no-border"></th>
+          <th class="no-border"></th>
+          <th colspan="5">Passing</th>
+          <th colspan="4">Rushing</th>
+          <th colspan="3">Total Offense</th>
+          <th colspan="4">First Downs</th>
+          <th colspan="2">Penalties</th>
+          <th colspan="3">Turnovers</th>
+      </tr>
+      <tr>
+        <th>rk</th>
+        <th>School</th>
+        <th>G</th>
+        <th>Pts</th>
+        <th>Cmp</th>
+        <th>Att</th>
+        <th>Pct</th>
+        <th>Yds</th>
+        <th>TD</th>
+        <th>Att</th>
+        <th>Yds</th>
+        <th>Avg</th>
+        <th>TD</th>
+        <th>Plays</th>
+        <th>Yds</th>
+        <th>Avg</th>
+        <th>Pass</th>
+        <th>Rush</th>
+        <th>Pen</th>
+        <th>Tot</th>
+        <th>No.</th>
+        <th>Yds</th>
+        <th>Fum</th>
+        <th>Int</th>
+        <th>Tot</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i = 0; i < content.length; i++) { %>
+      <tr>
+        <td><%= content[i].rk %></td>
+        <td><%= content[i].School %></td>
+        <td><%= content[i].G %></td>
+        <td><%= content[i].Pts %></td>
+        <td><%= content[i].Passing.Cmp %></td>
+        <td><%= content[i].Passing.Att %></td>
+        <td><%= content[i].Passing.Pct  %></td>
+        <td><%= content[i].Passing.Yds  %></td>
+        <td><%= content[i].Passing.TD  %></td>
+        <td><%= content[i].Rushing.Att %></td>
+        <td><%= content[i].Rushing.Yds %></td>
+        <td><%= content[i].Rushing.Avg %></td>
+        <td><%= content[i].Rushing.TD %></td>
+        <td><%= content[i].TotalOffense.Plays %></td>
+        <td><%= content[i].TotalOffense.Yds %></td>
+        <td><%= content[i].TotalOffense.Avg %></td>
+        <td><%= content[i].FirstDowns.Pass %></td>
+        <td><%= content[i].FirstDowns.Rush %></td>
+        <td><%= content[i].FirstDowns.Pen %></td>
+        <td><%= content[i].FirstDowns.Tot %></td>
+        <td><%= content[i].Penalties.No %></td>
+        <td><%= content[i].Penalties.Yds %></td>
+        <td><%= content[i].Turnovers.Fum %></td>
+        <td><%= content[i].Turnovers.Int %></td>
+        <td><%= content[i].Turnovers.Tot %></td>
+      </tbody>
+      <% } %>
+    </tbody>
+  </table>
+  <div class="spinOSU">
+  </div>
+  <img src="http://s3.amazonaws.com/br-cdn/temp_images/2013/11/26/2013-11-2518_03_23.gif"/>
+  <audio src="http://www.fightmusic.com/mp3/big12/Oklahoma_State__Waving_Song.mp3" autobuffer loop/>
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
